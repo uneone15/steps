@@ -471,6 +471,49 @@
   .check { color: var(--green); font-weight: 700; }
   .cross { color: var(--coral); }
 
+  /* ── TARGET ── */
+  #target { background: var(--bg-card); }
+  .target-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .target-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: all 0.2s;
+    border-top: 4px solid transparent;
+  }
+  .target-card:nth-child(1) { border-top-color: var(--coral); }
+  .target-card:nth-child(2) { border-top-color: var(--sky); }
+  .target-card:nth-child(3) { border-top-color: var(--lavender); }
+  .target-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .target-card .t-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+  .target-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: var(--text-dark); }
+  .target-card p  { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+  /* ── MARKET ── */
+  #market { background: var(--bg-white); }
+  .market-niche {
+    background: linear-gradient(135deg, #2D2B36 0%, #3D3B46 100%);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    margin-top: 40px;
+    color: #fff;
+  }
+  .market-niche h3 {
+    font-family: 'KCCGanpan', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: var(--yellow);
+  }
+  .market-niche p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.82); }
+  .market-niche strong { color: #fff; }
+
   /* ── FEATURES ── */
   #features { background: var(--bg); }
   .features-grid {
@@ -1279,6 +1322,9 @@
 <nav>
   <div class="nav-logo">발걸<span>음</span></div>
   <ul class="nav-links">
+    <li><a href="#target">타겟</a></li>
+    <li><a href="#problem">문제</a></li>
+    <li><a href="#market">시장</a></li>
     <li><a href="#features">핵심 기능</a></li>
     <li><a href="#screens">화면 소개</a></li>
     <li><a href="#userflow">사용자 흐름</a></li>
@@ -1373,7 +1419,122 @@
   </div>
 </section>
 
+<!-- TARGET -->
+<section id="target" class="section">
+  <div class="container">
+    <div>
+      <span class="tag">Target User</span>
+      <h2 class="section-title">이런 분들을 위해 만들었어요</h2>
+      <p class="section-sub">여행은 자주 다니지만, 기록은 늘 미루게 되는 사람들.</p>
+    </div>
+    <div class="target-grid">
+      <div class="target-card">
+        <span class="t-icon">👩</span>
+        <h3>20~30대 여성</h3>
+        <p>여행을 즐기고 사진도 많이 찍지만, 정리할 시간과 에너지가 부족한 분들.</p>
+      </div>
+      <div class="target-card">
+        <span class="t-icon">📷</span>
+        <h3>기록은 미루게 되는 여행자</h3>
+        <p>여행 다녀온 뒤 "나중에 정리해야지" 하다가 결국 아무것도 남기지 못한 경험이 있는 분들.</p>
+      </div>
+      <div class="target-card">
+        <span class="t-icon">🌙</span>
+        <h3>조용한 나만의 아카이브</h3>
+        <p>인스타에 올리는 것과 별개로, 나만 보는 공간에 여행 기억을 조용히 모아두고 싶은 분들.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEM -->
+<section id="problem" class="section">
+  <div class="container">
+    <div>
+      <span class="tag">Problem</span>
+      <h2 class="section-title">기존 서비스의 불편함</h2>
+      <p class="section-sub">왜 지금까지 마음에 드는 여행 기록 앱이 없었을까요?</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="problem-icon">😩</span>
+        <h3>기록해야 한다는 부담</h3>
+        <p>여행 후 직접 글 쓰고 사진 정리하는 과정이 귀찮고, 결국 아무것도 안 하게 됩니다.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">📢</span>
+        <h3>공개 피드 중심 SNS</h3>
+        <p>인스타그램은 타인의 시선이 의식되어 개인 아카이브 용도로 사용하기 어색합니다.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon">🗂️</span>
+        <h3>감성 없는 자동 기록</h3>
+        <p>구글 타임라인은 위치 기록은 되지만 사진과의 연결이 없고, 추억을 되살리기 어렵습니다.</p>
+      </div>
+    </div>
+    <div class="problem-vs">
+      <h3>서비스별 불편함 비교</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>서비스</th><th>불편함</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>네이버 블로그 / 노션</td><td>직접 글 쓰고 사진 정리해야 해서 귀찮음</td></tr>
+          <tr><td>인스타그램</td><td>공개 피드 중심이라 개인 아카이브로 쓰기 어색함</td></tr>
+          <tr><td>구글 타임라인</td><td>기록은 되지만 감성 없고, 사진과 연결이 안 됨</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:28px;">
+        <h3 style="font-size:16px; font-weight:800; color:var(--main); margin-bottom:14px;">우리가 해결하는 문제</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:var(--text-mid);">
+            <span style="color:var(--coral); font-size:18px; flex-shrink:0;">✦</span>
+            <span>여행 후 기록해야 한다는 <strong style="color:var(--text-dark);">심리적 부담 제거</strong></span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:var(--text-mid);">
+            <span style="color:var(--coral); font-size:18px; flex-shrink:0;">✦</span>
+            <span>내가 언제, 어디서, 무엇을 했는지 <strong style="color:var(--text-dark);">자동으로 정리</strong></span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:var(--text-mid);">
+            <span style="color:var(--coral); font-size:18px; flex-shrink:0;">✦</span>
+            <span>"그때 갔던 그 카페 어디였지?"를 <strong style="color:var(--text-dark);">바로 찾을 수 있게</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section id="market" class="section">
+  <div class="container">
+    <div>
+      <span class="tag">Market Research</span>
+      <h2 class="section-title">시장 조사</h2>
+      <p class="section-sub">유사 서비스들이 채우지 못한 틈새를 발걸음이 채웁니다.</p>
+    </div>
+    <div class="problem-vs">
+      <h3>유사 서비스 분석</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>서비스</th><th>특징</th><th>한계</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Timeline</td><td>자동 위치 기록</td><td>감성 없음, 사진 연동 약함</td></tr>
+          <tr><td>Polarsteps</td><td>지도 우선 여행 트래킹, 2025년 기준 1,500만 명 유저</td><td>영문 서비스, UI 복잡</td></tr>
+          <tr><td>TripMemo</td><td>감성 아카이브, TripBook 개념, 빈티지 필터</td><td>신규 서비스, 인지도 낮음</td></tr>
+          <tr><td>Day One</td><td>감성 저널링 교과서, 자동 메타데이터</td><td>여행 특화 기능 없음</td></tr>
+          <tr><td>트리플</td><td>여행 계획 + 후기</td><td>기록 아카이브 기능 약함</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="market-niche">
+      <h3>발걸음이 채우는 틈새</h3>
+      <p>자동화 + 감성 아카이브를 동시에 잡는 <strong>국내 서비스가 없습니다.</strong><br>
+      사진 기반 자동 기록 + 감성적 기록 카드 뷰의 조합으로, 기록 부담 없이 나만의 여행 서랍을 완성합니다.</p>
+    </div>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section id="features" class="section">
